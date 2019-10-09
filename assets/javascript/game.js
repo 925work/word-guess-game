@@ -66,8 +66,9 @@ function evaluateGuess(letter) {
 function checkWin() {
     if(wordGuessed.indexOf(" _ ") === -1) {
         wins++;
+        refresh();
         gameOver = true;
-        alert("YOU WIN! " + wordGuessed + " PRESS ANY KEY TO START AGAIN");
+        document.getElementById("instructions").innerHTML = "YOU WIN! PRESS ANY KEY TO START AGAIN"
     }
 };
 
@@ -75,7 +76,7 @@ function checkWin() {
 function checkLoss(){
     if(guessesLeft <= 0) {
         gameOver = true;
-        alert("YOU LOSE! " + wordGuessed + " PRESS ANY KEY TO START AGAIN");
+        document.getElementById("instructions").innerHTML = "LOSER! PRESS ANY KEY TO START AGAIN"
     }
     console.log(guessesLeft)
 };
